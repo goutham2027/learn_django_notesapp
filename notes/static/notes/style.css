@@ -1,0 +1,9 @@
+.notes {
+  background-color: rgb(206, 235, 247);
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.notes p {
+  margin: 0;
+}

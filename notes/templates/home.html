@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p> Welcome {{ user.username.capitalize }} </p>
+  <a href="/logout"> Logout </a>
+  &nbsp;
+  <a href="/all_notes"> All Notes </a>
+
+  {% if not user_profile.has_credits %}
+    <h3> You do not have credits to create new notes </h3>
+  {% else %}
+    <h3> New notes ({{ user_profile.credits }}) </h3>
+      <form method="POST" class="post-form" action="{% url 'new_notes' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+      </form>
+  {% endif %}
+
+  <h3> Your notes ({{ my_notes|length }}) </h3>
+  {% for my_note in my_notes %}
+    <div class="notes">
+      <p> {{ my_note.notes_text }} </p>
+    </div>
+  {% endfor %}
+
+{% endblock %}

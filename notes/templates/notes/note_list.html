@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2> All Notes </h2>
+  <ul>
+    {% for notes in all_notes %}
+    <li> {{ notes.notes_text }} </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

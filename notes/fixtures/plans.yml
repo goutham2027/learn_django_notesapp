@@ -1,0 +1,12 @@
+- model: notes.plan
+  pk: 1
+  fields:
+    plan_name: free
+    credits: 100
+- model: notes.plan
+  pk: 2
+  fields:
+    plan_name: paid
+    credits: 1000
+
+
